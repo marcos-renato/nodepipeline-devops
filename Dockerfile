@@ -1,15 +1,15 @@
 FROM node:12
 
-
 RUN apt-get update && apt-get install git -y && apt-get install imagemagick -y && apt-get clean;
-
 
 WORKDIR /ecs-app
 
 COPY package*.json ./
-COPY . .
 
 RUN npm install
+
+COPY . .
+
 RUN chown -R node:node /ecs-app
 
 ENV NODE_ENV=production
