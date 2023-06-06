@@ -11,6 +11,12 @@ RUN chown -R node:node /ecs-app
 
 ENV NODE_ENV=production
 ENV ENV_ECS=true
+
+# Adicione o rótulo 'Name' ao seu Dockerfile
+LABEL Name="NODEPIPELINE-DEVOPS"
+# Adicione o rótulo 'Version' ao seu Dockerfile
+LABEL Version="1.0"
+
 USER root
 EXPOSE 80
 
